@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,14 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="An interesting fact goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-3l-y1J">
-                                <rect key="frame" x="16" y="94" width="288" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An interesting fact goes here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7C-3l-y1J">
+                                <rect key="frame" x="52" y="200" width="216" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="216" id="hob-wd-eeY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-0L-X2b">
-                                <rect key="frame" x="70" y="269" width="180" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you know?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQ5-d1-dUV">
+                                <rect key="frame" x="52" y="60" width="116" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="ENz-yZ-uVz"/>
+                                    <constraint firstAttribute="height" constant="22" id="nTV-3f-SUo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbg-0L-X2b">
+                                <rect key="frame" x="52" y="448" width="216" height="61"/>
+                                <color key="backgroundColor" red="1" green="1" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="Sc3-36-5PH"/>
+                                    <constraint firstAttribute="width" constant="216" id="sCY-Y5-InB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                                <color key="tintColor" red="0.29411764705882354" green="0.68627450980392157" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Show another fun fact">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -32,9 +53,18 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.3529411764705882" green="0.73333333333333328" blue="0.70980392156862748" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="EQ5-d1-dUV" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="0c5-Py-mrM"/>
+                            <constraint firstItem="EQ5-d1-dUV" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="36" id="D8P-zR-T1w"/>
+                            <constraint firstItem="mbg-0L-X2b" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="36" id="Hyf-wo-Ql6"/>
+                            <constraint firstItem="m7C-3l-y1J" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="180" id="aQt-wu-IBl"/>
+                            <constraint firstItem="m7C-3l-y1J" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="36" id="dVk-6T-mi1"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="mbg-0L-X2b" secondAttribute="bottom" constant="59" id="yc7-UQ-mHF"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="FunFactButton" destination="mbg-0L-X2b" id="HGA-Jr-LNf"/>
                         <outlet property="funFactLabel" destination="m7C-3l-y1J" id="rU1-ue-RVR"/>
                     </connections>
                 </viewController>
